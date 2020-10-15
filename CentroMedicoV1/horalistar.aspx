@@ -14,6 +14,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2 class="text-center">Lista de horas</h2>
+                   <a href="horanuevo.aspx">Definir hora</a>
                 </div>
                 <div class="card-body">
                     <asp:Table 
@@ -25,8 +26,10 @@
                             <asp:TableCell runat="server">Fecha</asp:TableCell>
                             <asp:TableCell runat="server">Hora Minuto</asp:TableCell>
                             <asp:TableCell runat="server">Medico</asp:TableCell>
+                            <asp:TableCell runat="server">Especialidad</asp:TableCell>
                             <asp:TableCell runat="server">Estado</asp:TableCell>
                             <asp:TableCell runat="server">Editar</asp:TableCell>
+                            <asp:TableCell runat="server">Eliminar</asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
                 </div>

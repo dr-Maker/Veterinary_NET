@@ -34,14 +34,20 @@ namespace CentroMedicoV1
                 c.Text = item.Idhora.ToString(); 
                 r.Cells.Add(c);
 
-                c = new TableCell(); c.Text = item.Fecha.ToString(); r.Cells.Add(c);
-                c = new TableCell(); c.Text = item.Horaminuto.ToString(); r.Cells.Add(c);
-                c = new TableCell(); c.Text = item.Medico.Idmedico.ToString(); r.Cells.Add(c);
-                c = new TableCell(); c.Text = item.Estado.Idestado.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = item.FechaTxt.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = item.HoraMinutoTxt.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = item.Medico.NomMedico.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = item.Medico.NomEspecialidad.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = item.Estado.Descripcion.ToString(); r.Cells.Add(c);
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
                 c.Text = "<a  href='horaeditar.aspx?id="+ item.Idhora.ToString() + "'>Editar</a>";
+                r.Cells.Add(c);
+
+                c = new TableCell();
+                c.HorizontalAlign = HorizontalAlign.Center;
+                c.Text = "<a href='horaborrar.aspx?id=" + item.Idhora.ToString() + "'>Borrar</a>";
                 r.Cells.Add(c);
             }
         }

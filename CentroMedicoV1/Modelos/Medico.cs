@@ -40,5 +40,21 @@ namespace Modelos
         public string Email { get => email; set => email = value; }
         public int Telefono { get => telefono; set => telefono = value; }
         public Especialidad Especialidad { get => especialidad; set => especialidad = value; }
+
+        public string NomMedico
+        {
+            get
+            {
+                return nombres + " " + apellidos;
+            }
+        }
+
+        public string NomEspecialidad
+        {
+            get
+            {
+                return especialidad.Descripcion;
+            }
+        }
     }
 }

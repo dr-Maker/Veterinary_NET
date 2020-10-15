@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Buss;
+using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,48 @@ namespace CentroMedicoV1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack)
+            {
+                if (Request["id"] != null)
+                {
+                    int id = Convert.ToInt32(Request["id"].ToString());
+
+                    Hora obj = BussHora.Buscar(id);
+                    if (obj != null)
+                    {
+                        idhora.Text = obj.Idhora.ToString();
+                        fecha.Text = obj.FechaTxt.ToString();
+                        horaminuto.Text = obj.HoraMinutoTxt.ToString();
+                        idmedico.Text = obj.Medico.NomMedico.ToString();
+                        idestado.Text = obj.Estado.Descripcion.ToString();
+                    }
+                    else
+                    {
+                        Response.Redirect("horalistar.aspx");
+                    }
+                }
+                else
+                {
+                    Response.Redirect("horalistar.aspx");
+                }
+            }
+        }
+    
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                int id = int.Parse(idhora.Text);
+                BussHora.Delete(id);
+                Response.Redirect("horalistar.aspx");
+            }
+            catch (Exception exe)
+            {
+
+            }
 
         }
     }

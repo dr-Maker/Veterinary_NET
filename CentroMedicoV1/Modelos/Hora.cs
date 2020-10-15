@@ -36,5 +36,40 @@ namespace Modelos
         public TimeSpan Horaminuto { get => horaminuto; set => horaminuto = value; }
         public Medico Medico { get => medico; set => medico = value; }
         public Estado Estado { get => estado; set => estado = value; }
+
+
+        public string FechaTxt
+        {
+            get
+            {
+                if (fecha != null)
+                {
+                    string dia = right(fecha.Day.ToString(), 2);
+                    string mes = right(fecha.Month.ToString(), 2);
+                    string anno = right(fecha.Year.ToString(), 4);
+                    return dia + "-" + mes + "-" + anno;
+                }
+                else
+                {
+                    return "-";
+                }
+            }
+        }
+
+        public string HoraMinutoTxt
+        {
+            get
+            {
+                string hora = right(horaminuto.Hours.ToString(), 2);
+                string minuto = right(horaminuto.Minutes.ToString(), 2);
+                return hora + ":" + minuto;
+            }
+        }
+
+        public string right(string cadena, int largo)
+        {
+            cadena = "0000000000" + cadena;
+            return cadena.Substring(cadena.Length - largo);
+        }
     }
 }

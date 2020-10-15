@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Buss;
+using Modelos;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +14,75 @@ namespace CentroMedicoV1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request["id"] != null)
+                {
+                    DataTable dtm = BussMedico.Listar();
+                    idmedico.Items.Add(new ListItem("Seleccione..", ""));
+                    foreach (DataRow r in dtm.Rows)
+                    {
+                        string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                        string valor = r["idmedico"].ToString();
+                        idmedico.Items.Add(new ListItem(texto, valor));
+                    }
+
+                    DataTable dte = BussEstado.Listar();
+                    idestado.Items.Add(new ListItem("Seleccione..", ""));
+                    foreach (DataRow r in dte.Rows)
+                    {
+                        string texto = r["descripcion"].ToString();
+                        string valor = r["idestado"].ToString();
+                        idestado.Items.Add(new ListItem(texto, valor));
+                    }
+
+              
+
+                    int id = Convert.ToInt32(Request["id"].ToString());
+                    Hora obj = BussHora.Buscar(id);
+                    if (obj != null)
+                    {
+                        idhora.Text = obj.Idhora.ToString();
+                        fecha.Text = obj.Fecha.ToString();
+                        horaminuto.Text = obj.HoraMinutoTxt.ToString();
+                        idmedico.Text = obj.Medico.Idmedico.ToString();
+                        idestado.Text = obj.Estado.Idestado.ToString();
+                    }
+                    else
+                    {
+                        Response.Redirect("horalistar.aspx");
+                    }
+                }   
+                else
+                {
+                    Response.Redirect("horalistar.aspx");
+                }
+
+            }
+        }
+
+        protected void btnGrabar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Hora obj = new Hora();
+                obj.Idhora = int.Parse(idhora.Text);
+                obj.Fecha = DateTime.Parse(fecha.Text);
+                obj.Horaminuto = TimeSpan.Parse(horaminuto.Text);
+
+                obj.Medico = new Medico();
+                obj.Medico.Idmedico = int.Parse(idmedico.Text);
+
+                obj.Estado = new Estado();
+                obj.Estado.Idestado = int.Parse(idestado.Text);
+
+                BussHora.Update(obj);
+
+                Response.Redirect("horalistar.aspx");
+            }
+            catch (Exception exe)
+            {
+            }
 
         }
     }
