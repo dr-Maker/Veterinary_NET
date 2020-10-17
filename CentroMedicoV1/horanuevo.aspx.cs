@@ -2,6 +2,7 @@
 using Modelos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,27 @@ namespace CentroMedicoV1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // llenar los DropDownList
+            DataTable dtm = BussMedico.Listar();
+            idmedico.Items.Add(new ListItem("Seleccione..", ""));
+            foreach (DataRow r in dtm.Rows)
+            {
+                string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                string valor = r["idmedico"].ToString();
+                idmedico.Items.Add(new ListItem(texto, valor));
+            }
 
+            DataTable dte = BussEstado.Listar();
+            idestado.Items.Add(new ListItem("Seleccione..", ""));
+            foreach (DataRow r in dte.Rows)
+            {
+                string texto = r["descripcion"].ToString();
+                string valor = r["idestado"].ToString();
+                if (valor.Equals("1"))
+                {
+                    idestado.Items.Add(new ListItem(texto, valor));
+                }
+            }
 
         }
 

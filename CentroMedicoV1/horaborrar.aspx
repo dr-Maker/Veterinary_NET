@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Fecha" />
-                        <asp:TextBox TextMode="Date" CssClass="form-control" ID="fecha" runat="server" />
+                        <asp:TextBox ReadOnly="true" CssClass="form-control" ID="fecha" runat="server" />
                          
                     </div>
 

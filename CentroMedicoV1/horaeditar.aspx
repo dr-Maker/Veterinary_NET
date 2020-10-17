@@ -23,17 +23,17 @@
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Fecha" />
-                        <asp:TextBox TextMode="Date" CssClass="form-control" ID="fecha" runat="server" />
-                         <asp:RequiredFieldValidator runat="server" ErrorMessage="Requerido" ControlToValidate="fecha"/>
-                         <asp:RegularExpressionValidator runat="server" ErrorMessage="fecha no valida" ValidationExpression="\d{2}-d{2}-\d{4}" ControlToValidate="fecha"/>
+                        <asp:TextBox CssClass="form-control" ID="fecha" runat="server" />
+                         <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ErrorMessage="Requerido" ControlToValidate="fecha"/>
+                         <asp:RegularExpressionValidator runat="server" CssClass="text-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{2}-\d{2}-\d{4}" ControlToValidate="fecha"/>                       
                     </div>
 
 
                     <div class="form-group">
                         <asp:Label runat="server" Text="Hora minuto" />
                         <asp:TextBox  TextMode="Time" CssClass="form-control" ID="horaminuto" runat="server" />
-                         <asp:RequiredFieldValidator runat="server" ErrorMessage="Requerido" ControlToValidate="horaminuto"/>
-                         <asp:RegularExpressionValidator runat="server" ErrorMessage="Hora no valida" ValidationExpression="\d{2}:\d{2}" ControlToValidate="horaminuto"/>
+                         <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ErrorMessage="Requerido" ControlToValidate="horaminuto"/>
+                         <asp:RegularExpressionValidator CssClass="text-danger" runat="server" ErrorMessage="Hora no valida" ValidationExpression="\d{2}:\d{2}" ControlToValidate="horaminuto"/>
 
                         
                     </div>
@@ -41,14 +41,14 @@
                     <div class="form-group">
                         <asp:Label runat="server" Text="Medico" />
                         <asp:DropDownList  CssClass="form-control" ID="idmedico" runat="server" />
-                         <asp:RequiredFieldValidator runat="server" ErrorMessage="Requerido" ControlToValidate="idestado"/>
+                         <asp:RequiredFieldValidator runat="server" CssClass="text-danger" ErrorMessage="Requerido" ControlToValidate="idestado"/>
                     </div>
 
 
                       <div class="form-group">
                         <asp:Label runat="server" Text="Estado" />
                         <asp:DropDownList  CssClass="form-control" ID="idestado" runat="server" />
-                        <asp:RequiredFieldValidator runat="server" ErrorMessage="Requerido" ControlToValidate="idestado"/>
+                        <asp:RequiredFieldValidator runat="server" CssClass="text-danger" ErrorMessage="Requerido" ControlToValidate="idestado"/>
                     </div>
 
 
