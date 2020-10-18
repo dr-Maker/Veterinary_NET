@@ -250,4 +250,3 @@ as
 	where idespecialidad = @idespecialidad;
 go
 
-

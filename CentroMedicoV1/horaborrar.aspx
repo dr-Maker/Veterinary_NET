@@ -13,7 +13,17 @@
         <div class="container">
             <div class="card">
                  <div class="card-header">
-                    <h2 class="text-center">Borrar Hora</h2>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h2 >Borrar horas</h2>
+                        </div>
+                        <div class="col-md-2">
+                            <%
+                                Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
+                                %>
+                            <a href="logout.aspx">Cerrar sesión</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-body">

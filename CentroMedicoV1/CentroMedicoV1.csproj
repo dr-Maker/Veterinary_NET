@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap.css" />
+    <Content Include="Global.asax" />
     <Content Include="horaborrar.aspx" />
     <Content Include="horaeditar.aspx" />
     <Content Include="horalistar.aspx" />
@@ -76,8 +77,13 @@
     <Content Include="img\borrar.png" />
     <Content Include="img\editar.png" />
     <Content Include="img\nuevo.png" />
+    <Content Include="index.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery-3.3.1.js" />
+    <Content Include="logout.aspx" />
+    <Content Include="medicolistar.aspx" />
+    <Content Include="mediconuevo.aspx" />
+    <Content Include="menu.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,7 +93,11 @@
     <Compile Include="Buss\BussMedico.cs" />
     <Compile Include="Buss\BussPaciente.cs" />
     <Compile Include="Buss\BussReserva.cs" />
+    <Compile Include="Buss\BussUsuario.cs" />
     <Compile Include="Data\BaseDatos.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="horaborrar.aspx.cs">
       <DependentUpon>horaborrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,12 +126,48 @@
     <Compile Include="horanuevo.aspx.designer.cs">
       <DependentUpon>horanuevo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="medicolistar.aspx.cs">
+      <DependentUpon>medicolistar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="medicolistar.aspx.designer.cs">
+      <DependentUpon>medicolistar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mediconuevo.aspx.cs">
+      <DependentUpon>mediconuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mediconuevo.aspx.designer.cs">
+      <DependentUpon>mediconuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Especialidad.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Hora.cs" />
     <Compile Include="Modelos\Medico.cs" />
     <Compile Include="Modelos\Paciente.cs" />
     <Compile Include="Modelos\Reserva.cs" />
+    <Compile Include="Modelos\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
