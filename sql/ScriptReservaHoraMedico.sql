@@ -11,13 +11,13 @@ drop table especialidad;
 drop table estado;
 
 create table estado(
-idestado int,
+idestado int identity(1,1),
 descripcion varchar(50),
 primary key(idestado)
 );
 
 create table especialidad(
-idespecialidad int,
+idespecialidad int identity(1,1),
 descripcion varchar(50),
 primary key(idespecialidad)
 );
@@ -66,17 +66,17 @@ foreign key(idpaciente) references paciente(idpaciente),
 foreign key(idhora) references hora(idhora), 
 );
 
-insert into estado values(1, 'Disponible');
-insert into estado values(2, 'Reservada');
+insert into estado values( 'Disponible');
+insert into estado values( 'Reservada');
 
-insert into especialidad values('1', 'Medicina general');
-insert into especialidad values('2', 'Pediatría');
-insert into especialidad values('3', 'Oftalmología');
-insert into especialidad values('4', 'Neurología');
-insert into especialidad values('5', 'Cardiología');
-insert into especialidad values('6', 'Traumatología');
-insert into especialidad values('7', 'Dermatoligía');
-insert into especialidad values('8', 'Genicología');
+insert into especialidad values( 'Medicina general');
+insert into especialidad values( 'Pediatría');
+insert into especialidad values( 'Oftalmología');
+insert into especialidad values( 'Neurología');
+insert into especialidad values( 'Cardiología');
+insert into especialidad values( 'Traumatología');
+insert into especialidad values( 'Dermatoligía');
+insert into especialidad values( 'Genicología');
 
 insert into medico values('Felipe', 'Salas', 'fsalas@medico.net', '952785217', '1');
 insert into medico values('German', 'Torres', 'gtorres@medico.net', '959464717', '2');

@@ -218,7 +218,7 @@ drop procedure sp_listar_estado;
 go
 create procedure sp_listar_estado
 as
-	select * from medico;
+	select * from estado;
 go
 
 go
@@ -227,7 +227,7 @@ go
 create procedure sp_buscar_estado
 @idestado int
 as
-	delete from estado
+	select * from estado
 	where idestado = @idestado;
 go
 
@@ -250,3 +250,4 @@ as
 	where idespecialidad = @idespecialidad;
 go
 
+select * from estado

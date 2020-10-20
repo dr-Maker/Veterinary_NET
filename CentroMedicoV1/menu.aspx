@@ -12,6 +12,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="card">
+
                  <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
@@ -27,9 +28,11 @@
                 </div>
                 
                 <div class="card-body">
-                    <p> <a href="horalistar.aspx">Hora
-                        </a> </p>
-                    <p> <a href="medicolistar.aspx">Medico</a> </p>
+                    <p> <a href="horalistar.aspx">Hora </a></p>
+                    <p> <a href="medicolistar.aspx">Medico</a></p>
+                    <p> <a href="estadolistar.aspx">Estado</a></p>
+                    <p> <a href="especialidadlistar.aspx">Especialidad</a></p>
+                    <p> <a href="reservalistar.aspx">Reserva</a></p>
                 </div>
             </div>
         </div>

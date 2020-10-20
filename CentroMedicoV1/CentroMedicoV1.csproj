@@ -68,6 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap.css" />
+    <Content Include="especialidadborrar.aspx" />
+    <Content Include="especialidadeditar.aspx" />
+    <Content Include="especialidadlistar.aspx" />
+    <Content Include="especialidadnuevo.aspx" />
+    <Content Include="estadoborrar.aspx" />
+    <Content Include="estadoeditar.aspx" />
+    <Content Include="estadolistar.aspx" />
+    <Content Include="estadonuevo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="horaborrar.aspx" />
     <Content Include="horaeditar.aspx" />
@@ -84,6 +92,8 @@
     <Content Include="medicolistar.aspx" />
     <Content Include="mediconuevo.aspx" />
     <Content Include="menu.aspx" />
+    <Content Include="reservalistar.aspx" />
+    <Content Include="reservanuevo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +105,62 @@
     <Compile Include="Buss\BussReserva.cs" />
     <Compile Include="Buss\BussUsuario.cs" />
     <Compile Include="Data\BaseDatos.cs" />
+    <Compile Include="especialidadborrar.aspx.cs">
+      <DependentUpon>especialidadborrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="especialidadborrar.aspx.designer.cs">
+      <DependentUpon>especialidadborrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="especialidadeditar.aspx.cs">
+      <DependentUpon>especialidadeditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="especialidadeditar.aspx.designer.cs">
+      <DependentUpon>especialidadeditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="especialidadlistar.aspx.cs">
+      <DependentUpon>especialidadlistar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="especialidadlistar.aspx.designer.cs">
+      <DependentUpon>especialidadlistar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="especialidadnuevo.aspx.cs">
+      <DependentUpon>especialidadnuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="especialidadnuevo.aspx.designer.cs">
+      <DependentUpon>especialidadnuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estadoborrar.aspx.cs">
+      <DependentUpon>estadoborrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estadoborrar.aspx.designer.cs">
+      <DependentUpon>estadoborrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estadoeditar.aspx.cs">
+      <DependentUpon>estadoeditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estadoeditar.aspx.designer.cs">
+      <DependentUpon>estadoeditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estadolistar.aspx.cs">
+      <DependentUpon>estadolistar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estadolistar.aspx.designer.cs">
+      <DependentUpon>estadolistar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="estadonuevo.aspx.cs">
+      <DependentUpon>estadonuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="estadonuevo.aspx.designer.cs">
+      <DependentUpon>estadonuevo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +235,20 @@
     <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Modelos\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reservalistar.aspx.cs">
+      <DependentUpon>reservalistar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reservalistar.aspx.designer.cs">
+      <DependentUpon>reservalistar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reservanuevo.aspx.cs">
+      <DependentUpon>reservanuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reservanuevo.aspx.designer.cs">
+      <DependentUpon>reservanuevo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
