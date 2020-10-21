@@ -92,6 +92,8 @@
     <Content Include="medicolistar.aspx" />
     <Content Include="mediconuevo.aspx" />
     <Content Include="menu.aspx" />
+    <Content Include="reservaborrar.aspx" />
+    <Content Include="reservaeditar.aspx" />
     <Content Include="reservalistar.aspx" />
     <Content Include="reservanuevo.aspx" />
     <Content Include="Web.config" />
@@ -235,6 +237,20 @@
     <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Modelos\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reservaborrar.aspx.cs">
+      <DependentUpon>reservaborrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reservaborrar.aspx.designer.cs">
+      <DependentUpon>reservaborrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reservaeditar.aspx.cs">
+      <DependentUpon>reservaeditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reservaeditar.aspx.designer.cs">
+      <DependentUpon>reservaeditar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="reservalistar.aspx.cs">
       <DependentUpon>reservalistar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

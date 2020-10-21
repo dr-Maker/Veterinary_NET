@@ -37,41 +37,44 @@ namespace Buss
                 obj.Idreserva = int.Parse(fila["idreserva"].ToString());
 
                 obj.Medico = new Medico();
-                obj.Medico.Idmedico = int.Parse(fila["idestado"].ToString());
-                obj.Medico.Nombres = fila["idestado"].ToString();
-                obj.Medico.Apellidos = fila["idestado"].ToString();
-                obj.Medico.Email = fila["idestado"].ToString();
-                obj.Medico.Telefono = int.Parse(fila["idestado"].ToString());
+                obj.Medico.Idmedico = int.Parse(fila["idmedico"].ToString());
+                obj.Medico.Nombres = fila["medico_nombre"].ToString();
+                obj.Medico.Apellidos = fila["medico_apellido"].ToString();
+                obj.Medico.Email = fila["medico_email"].ToString();
+                obj.Medico.Telefono = int.Parse(fila["medico_telefono"].ToString());
 
                 obj.Medico.Especialidad = new Especialidad();
-                obj.Medico.Especialidad.Idespecialidad = int.Parse(fila["idestado"].ToString());
-                obj.Medico.Especialidad.Descripcion = fila["idestado"].ToString();
+                obj.Medico.Especialidad.Idespecialidad = int.Parse(fila["idespecialidad"].ToString());
+                obj.Medico.Especialidad.Descripcion = fila["especialidad"].ToString();
 
                 obj.Paciente = new Paciente();
-                obj.Paciente.Idpaciente = int.Parse(fila["idestado"].ToString());
-                obj.Paciente.Nombres = fila["idestado"].ToString();
-                obj.Paciente.Apellidos = fila["idestado"].ToString();
-                obj.Paciente.Email = fila["idestado"].ToString();
-                obj.Paciente.Telefono = int.Parse(fila["idestado"].ToString());
-                obj.Paciente.Genero = fila["idestado"].ToString();
-                obj.Paciente.Edad = int.Parse(fila["idestado"].ToString());
+                obj.Paciente.Idpaciente = int.Parse(fila["idpaciente"].ToString());
+                obj.Paciente.Nombres = fila["paciente_nombres"].ToString();
+                obj.Paciente.Apellidos = fila["paciente_apellidos"].ToString();
+                obj.Paciente.Email = fila["paciente_email"].ToString();
+                obj.Paciente.Telefono = int.Parse(fila["paciente_telefono"].ToString());
+                obj.Paciente.Genero = fila["genero"].ToString();
+                obj.Paciente.Edad = int.Parse(fila["edad"].ToString());
 
                 obj.Hora = new Hora();
-                obj.Hora.Idhora = int.Parse(fila["idestado"].ToString());
-                obj.Hora.Horaminuto = TimeSpan.Parse(fila["idestado"].ToString());
+                obj.Hora.Idhora = int.Parse(fila["idhora"].ToString());
+                obj.Hora.Fecha = DateTime.Parse(fila["fecha"].ToString());
+                obj.Hora.Horaminuto = TimeSpan.Parse(fila["horaminuto"].ToString());
                 obj.Hora.Medico = new Medico();
-                obj.Hora.Medico.Idmedico = int.Parse(fila["idestado"].ToString());
-                obj.Hora.Medico.Nombres = fila["idestado"].ToString();
-                obj.Hora.Medico.Apellidos = fila["idestado"].ToString();
-                obj.Hora.Medico.Email = fila["idestado"].ToString();
-                obj.Hora.Medico.Telefono = int.Parse(fila["idestado"].ToString());
+                obj.Hora.Medico.Idmedico = int.Parse(fila["idmedico"].ToString());
+                obj.Hora.Medico.Nombres = fila["medico_nombre"].ToString();
+                obj.Hora.Medico.Apellidos = fila["medico_apellido"].ToString();
+                obj.Hora.Medico.Email = fila["medico_email"].ToString();
+                obj.Hora.Medico.Telefono = int.Parse(fila["medico_telefono"].ToString());
 
                 obj.Hora.Estado = new Estado();
                 obj.Hora.Estado.Idestado = int.Parse(fila["idestado"].ToString());
-                obj.Hora.Estado.Descripcion = fila["idestado"].ToString();
+                obj.Hora.Estado.Descripcion = fila["estado"].ToString();
 
                  lista.Add(obj);
             }
+
+           
 
             return lista;
         }

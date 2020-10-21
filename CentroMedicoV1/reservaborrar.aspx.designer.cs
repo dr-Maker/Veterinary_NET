@@ -10,7 +10,7 @@
 namespace CentroMedicoV1 {
     
     
-    public partial class reservanuevo {
+    public partial class reservaborrar {
         
         /// <summary>
         /// Control form1.

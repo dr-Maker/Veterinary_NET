@@ -2,6 +2,7 @@
 using Modelos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,7 +19,29 @@ namespace CentroMedicoV1
             {
                 Response.Redirect("index.aspx");
             }
+
+            DataTable dtm = BussMedico.Listar();
+            ddlMedico.Items.Add(new ListItem("Seleccione..", ""));
+            foreach (DataRow r in dtm.Rows)
+            {
+                string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                string valor = r["idmedico"].ToString();
+                ddlMedico.Items.Add(new ListItem(texto, valor));
+            }
+
+            DataTable dte = BussEspecialidad.Listar();
+            ddlEspecialidad.Items.Add(new ListItem("Seleccione..", ""));
+            foreach (DataRow r in dte.Rows)
+            {
+                string texto = r["descripcion"].ToString();
+                string valor = r["idespecialidad"].ToString();
+                ddlEspecialidad.Items.Add(new ListItem(texto, valor));
+               
+            }
+
             LlenarTabla();
+
+
         }
         public void LlenarTabla()
         {
@@ -36,11 +59,11 @@ namespace CentroMedicoV1
                 c = new TableCell(); c.Text = obj.Hora.HoraMinutoTxt.ToString(); r.Cells.Add(c);
                 c = new TableCell(); c.Text = obj.Medico.NomMedico.ToString(); r.Cells.Add(c);
                 c = new TableCell(); c.Text = obj.Medico.NomEspecialidad.ToString(); r.Cells.Add(c);
-                c = new TableCell(); c.Text = obj.Paciente.Nombres.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = obj.Paciente.NomPaciente.ToString(); r.Cells.Add(c);
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
-                c.Text = "<a  href='reservaditar.aspx?id=" + obj.Idreserva.ToString() + "'>Editar</a>";
+                c.Text = "<a  href='reservaeditar.aspx?id=" + obj.Idreserva.ToString() + "'>Editar</a>";
                 r.Cells.Add(c);
 
                 c = new TableCell();

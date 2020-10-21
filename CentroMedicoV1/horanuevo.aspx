@@ -12,14 +12,16 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="card">
-               <div class="row">
+
+                <div class="card-header">
+                    <div class="row">
                         <div class="col-md-10">
-                            <h2 >Nueva Hora</h2>
+                            <h2>Nueva Hora</h2>
                         </div>
                         <div class="col-md-2">
                             <%
-                                Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
-                                %>
+                                Response.Write("Hola " + Session["usuario"].ToString() + "<br>");
+                            %>
                             <a href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
@@ -28,16 +30,14 @@
                 <div class="card-body">
                     <div class="form-group">
                         <asp:Label runat="server" Text="Id.Hora" />
-                        <asp:TextBox ReadOnly="true" CssClass="form-control" ID="idhora" runat="server" />
+                        <asp:TextBox ReadOnly="true"  CssClass="form-control" ID="idhora" runat="server" />
                     </div>
 
                     <div class="form-group">
                         <asp:Label runat="server" Text="Fecha" />
-                        <asp:TextBox CssClass="form-control" ID="fecha" runat="server" />
-                         <asp:RequiredFieldValidator CssClass="alert alert-danger" runat="server" ErrorMessage="Requerido" ControlToValidate="fecha"/>
-                        <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{2}-\d{2}-\d{4}" ControlToValidate="fecha"/>
-                       
-                         
+                        <asp:TextBox CssClass="form-control" TextMode="Date" ID="fecha" runat="server" />
+                        <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{4}-\d{2}-\d{2}" ControlToValidate="fecha"/>
+                        <asp:RequiredFieldValidator CssClass="alert alert-danger" runat="server" ErrorMessage="Requerido" ControlToValidate="fecha"/>       
                     </div>
 
 
@@ -46,8 +46,6 @@
                         <asp:TextBox  TextMode="Time" CssClass="form-control" ID="horaminuto" runat="server" />
                          <asp:RequiredFieldValidator runat="server" ErrorMessage="Requerido" ControlToValidate="horaminuto"/>
                          <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Hora no valida" ValidationExpression="\d{2}:\d{2}" ControlToValidate="horaminuto"/>
-
-                        
                     </div>
 
                     <div class="form-group">
@@ -57,7 +55,7 @@
                     </div>
 
 
-                      <div class="form-group">
+                     <div class="form-group">
                         <asp:Label runat="server" Text="Estado" />
                         <asp:DropDownList  CssClass="form-control" ID="idestado" runat="server" />
                         <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Requerido" ControlToValidate="idestado"/>
@@ -72,6 +70,8 @@
                         <a  href="horalistar.aspx">Volver</a>
                     </p>
                 </div>
+
+
             </div>
         </div>
     </form>

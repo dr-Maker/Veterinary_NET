@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reservanuevo.aspx.cs" Inherits="CentroMedicoV1.reservanuevo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reservaeditar.aspx.cs" Inherits="CentroMedicoV1.reservaeditar" %>
 
 <!DOCTYPE html>
 
@@ -6,17 +6,18 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="css/bootstrap.css" rel="stylesheet" />
-    <title>Nueva Reserva</title>
+    <title>Editar Reserva </title>
 </head>
 <body>
-    <form id="form1" runat="server">
+       <form id="form1" runat="server">
         <div class="container">
             <div class="card">
 
+            
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h2>Nueva Reserva</h2>
+                            <h2>Borrar Reserva</h2>
                         </div>
                         <div class="col-md-2">
                             <%
@@ -26,7 +27,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-body">
                      <div class="form-group">
                         <asp:Label runat="server" Text="Id.Reserva" />

@@ -32,8 +32,9 @@
                      <div class="form-group row">
                                 <asp:Label runat="server" CssClass="col-sm-2 col-form-label" Text="Fecha" />
                           <div class="col-sm-2">
-                                <asp:TextBox CssClass="form-control" ID="txtFecha" runat="server" />
-                           </div> 
+                                <asp:TextBox TextMode="Date" CssClass="form-control" ID="txtFecha" runat="server" />
+                                <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{4}-\d{2}-\d{2}" ControlToValidate="txtFecha"/>
+                          </div> 
                         <asp:Label runat="server" Text="Medico" />
                                 <div class="col-sm-3">
                                     <asp:DropDownList CssClass="form-control" ID="ddlMedico" runat="server" />
@@ -48,7 +49,9 @@
                     <asp:Table runat="server" ID="tblEspecialidad" CssClass="table table-bordered table-striped"> 
                         <asp:TableRow runat="server" TableSection="TableHeader">
                             <asp:TableCell runat="server">Id.Reserva</asp:TableCell>
+                            <asp:TableCell runat="server">Fecha</asp:TableCell>
                             <asp:TableCell runat="server">Hora Minuto</asp:TableCell>
+                            <asp:TableCell runat="server">Medico</asp:TableCell>
                             <asp:TableCell runat="server">Especialidad</asp:TableCell>
                             <asp:TableCell runat="server">Paciente</asp:TableCell>
                             <asp:TableCell runat="server">Editar</asp:TableCell>

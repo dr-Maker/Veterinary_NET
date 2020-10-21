@@ -33,9 +33,10 @@
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Fecha" />
-                        <asp:TextBox CssClass="form-control" ID="fecha" runat="server" />
+                        <asp:TextBox TextMode="Date" CssClass="form-control" ID="fecha" runat="server" />
+                         <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{4}-\d{2}-\d{2}" ControlToValidate="fecha"/>
                          <asp:RequiredFieldValidator CssClass="alert alert-danger" runat="server" ErrorMessage="Requerido" ControlToValidate="fecha"/>
-                         <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{2}-\d{2}-\d{4}" ControlToValidate="fecha"/>                       
+                                               
                     </div>
 
 

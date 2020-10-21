@@ -112,5 +112,21 @@ drop procedure sp_listar_reserva;
 go
 create procedure sp_listar_reserva
 as
-	select * from reserva;
+	select idreserva, medico.idmedico ,medico.nombres as medico_nombre, medico.apellidos as medico_apellido, medico.email as medico_email, medico.telefono as medico_telefono, --medico
+	especialidad.idespecialidad, especialidad.idespecialidad as especialidad,
+	paciente.idpaciente, paciente.nombres as paciente_nombres, paciente.apellidos as paciente_apellidos, paciente.email as paciente_email, paciente.telefono as paciente_telefono, genero, edad,
+	hora.idhora,fecha, horaminuto, hora.idestado, estado.descripcion as estado
+	from  reserva
+	inner join medico
+	on reserva.idmedico = medico.idmedico
+	inner join especialidad
+	on medico.idespecialidad = especialidad.idespecialidad
+	inner join paciente 
+	on reserva.idpaciente = paciente.idpaciente
+	inner join hora
+	on reserva.idhora = hora.idhora
+	inner join estado
+	on hora.idestado = estado.idestado
 go
+
+

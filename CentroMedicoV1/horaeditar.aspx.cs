@@ -48,7 +48,7 @@ namespace CentroMedicoV1
                     if (obj != null)
                     {
                         idhora.Text = obj.Idhora.ToString();
-                        fecha.Text = obj.FechaTxt.ToString();
+                        fecha.Text = obj.FechaTxtBox.ToString();
                         horaminuto.Text = obj.HoraMinutoTxt.ToString();
                         idmedico.Text = obj.Medico.Idmedico.ToString();
                         idestado.Text = obj.Estado.Idestado.ToString();

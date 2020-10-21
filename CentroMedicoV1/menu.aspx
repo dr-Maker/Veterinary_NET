@@ -16,7 +16,7 @@
                  <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h2 >Nuevo Medicos</h2>
+                            <h2>Menu Centro Medico</h2>
                         </div>
                         <div class="col-md-2">
                             <%

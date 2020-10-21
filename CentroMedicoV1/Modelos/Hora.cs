@@ -56,6 +56,25 @@ namespace Modelos
             }
         }
 
+
+        public string FechaTxtBox
+        {
+            get
+            {
+                if (fecha != null)
+                {
+                    string dia = right(fecha.Day.ToString(), 2);
+                    string mes = right(fecha.Month.ToString(), 2);
+                    string anno = right(fecha.Year.ToString(), 4);
+                    return  anno + "-" + mes + "-" + dia;
+                }
+                else
+                {
+                    return "-";
+                }
+            }
+        }
+
         public string HoraMinutoTxt
         {
             get

@@ -44,5 +44,14 @@ namespace Modelos
         public int Telefono { get => telefono; set => telefono = value; }
         public string Genero { get => genero; set => genero = value; }
         public int Edad { get => edad; set => edad = value; }
+
+        public string NomPaciente
+        {
+            get
+            {
+                return nombres + " " + apellidos;
+            }
+        }
+
     }
 }
