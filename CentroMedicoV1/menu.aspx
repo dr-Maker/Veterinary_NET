@@ -32,6 +32,7 @@
                     <p> <a href="medicolistar.aspx">Medico</a></p>
                     <p> <a href="estadolistar.aspx">Estado</a></p>
                     <p> <a href="especialidadlistar.aspx">Especialidad</a></p>
+                    <p> <a href="pacientelistar.aspx">Paciente</a></p>
                     <p> <a href="reservalistar.aspx">Reserva</a></p>
                 </div>
             </div>

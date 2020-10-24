@@ -14,12 +14,12 @@ namespace Buss
     {
         static BaseDatos db = new BaseDatos();
 
-        public static DataTable Listar01()
+        public static DataTable Listar()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_listar_hora";
-            cmd.Parameters.Add("@idestado", SqlDbType.Int).Value = 0;
+            cmd.Parameters.Add("@idestado", SqlDbType.Int).Value = 1;
             return db.ejecutarConsulta(cmd);
         }
 

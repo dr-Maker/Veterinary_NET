@@ -38,12 +38,12 @@ namespace CentroMedicoV1
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
-                c.Text = "<a  href='especialidadeditar.aspx?id=" + obj.Idespecialidad.ToString() + "'>Editar</a>";
+                c.Text = "<a  href='especialidadeditar.aspx?id=" + obj.Idespecialidad.ToString() + "'><img border='0' src='img/editar.png'></a>";
                 r.Cells.Add(c);
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
-                c.Text = "<a href='especialidadborrar.aspx?id=" + obj.Idespecialidad.ToString() + "'>Borrar</a>";
+                c.Text = "<a href='especialidadborrar.aspx?id=" + obj.Idespecialidad.ToString() + "'><img border='0' src='img/borrar.png'></a>";
                 r.Cells.Add(c);
             }
         }

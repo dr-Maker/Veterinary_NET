@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="medicolistar.aspx.cs" Inherits="CentroMedicoV1.medicolistar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pacientelistar.aspx.cs" Inherits="CentroMedicoV1.pacientelistar" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="css/bootstrap.css" rel="stylesheet" />
-    <title>Lista Médicos</title>
+    <title>Lista Pacientes</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,7 +15,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h2>Lista de Medicos</h2>
+                            <h2>Lista de Pacientes</h2>
 
                         </div>
                         <div class="col-md-2 text-center text-center">
@@ -26,18 +26,19 @@
                         </div>
                     </div>
 
-                       <a class="btn btn-primary" href="mediconuevo.aspx"><img border='0' src="img/add.png" />Nuevo Medico</a>
+                       <a class="btn btn-primary" href="pacientenuevo.aspx"><img border='0' src="img/add.png" />Nuevo Paciente</a>
 
                 </div>
                 <div class="card-body">
 
                     <asp:Table ID="tblMedicos" runat="server" CssClass="table table-bordered table-striped text-center">
                         <asp:TableRow runat="server" TableSection="TableHeader">
-                            <asp:TableCell runat="server">ID.Médico</asp:TableCell>
-                            <asp:TableCell runat="server">Nombre</asp:TableCell>
+                            <asp:TableCell runat="server">ID.Paciente</asp:TableCell>
+                            <asp:TableCell runat="server">Nombre</asp:TableCell>                      
                             <asp:TableCell runat="server">Email</asp:TableCell>
                             <asp:TableCell runat="server">Teléfono</asp:TableCell>
-                            <asp:TableCell runat="server">Especialidad</asp:TableCell>
+                            <asp:TableCell runat="server">Genero</asp:TableCell>
+                            <asp:TableCell runat="server">Edad</asp:TableCell>
                             <asp:TableCell runat="server">Editar</asp:TableCell>
                             <asp:TableCell runat="server">Borrar</asp:TableCell>
                         </asp:TableRow>

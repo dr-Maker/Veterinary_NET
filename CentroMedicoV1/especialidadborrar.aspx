@@ -14,14 +14,14 @@
             <div class="card">
                  <div class="card-header">
                       <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-10 text-center">
                             <h2 >Borrar Especialidad</h2>
                         </div>
                         <div class="col-md-2">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -36,8 +36,7 @@
                      <div class="form-group">
                         <asp:Label runat="server" Text="Estado" />
                         <asp:TextBox ReadOnly="true" CssClass="form-control" ID="txtespecialidad" runat="server" />
-                        <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Requerido" ControlToValidate="txtespecialidad"/>
-                    </div>
+                       
 
 
                     <div class="form-group">
@@ -45,7 +44,7 @@
                     </div>
 
                     <p>
-                        <a  href="estadolistar.aspx">Volver</a>
+                        <a class="btn btn-info" href="especialidadlistar.aspx">Volver</a>
                     </p>
                 </div>
             </div>

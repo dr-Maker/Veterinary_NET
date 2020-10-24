@@ -17,11 +17,11 @@
                         <div class="col-md-10">
                             <h2 >Nuevo Estado</h2>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-center">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -35,17 +35,18 @@
 
                      <div class="form-group">
                         <asp:Label runat="server" Text="Estado" />
-                        <asp:TextBox  CssClass="form-control" ID="txtdescripcion" runat="server" />
-                        <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Requerido" ControlToValidate="txtdescripcion"/>
-                    </div>
+                        <asp:TextBox  CssClass="form-control" placeholder="Ingrese descripción del nuevo Estado" ID="txtdescripcion" runat="server" />
+                     </div>
+                        <asp:RequiredFieldValidator runat="server"  CssClass="alert alert-danger"  ErrorMessage="Campo Requerido" ControlToValidate="txtdescripcion"/>
+               
 
-
+                    
                     <div class="form-group">
                         <asp:Button ID="btnGrabar" CssClass="btn btn-primary" runat="server" Text="Grabar" OnClick="btnGrabar_Click"/>
                     </div>
 
                     <p>
-                        <a  href="estadolistar.aspx">Volver</a>
+                        <a class="btn btn-info" href="estadolistar.aspx">Volver</a>
                     </p>
                 </div>
             </div>

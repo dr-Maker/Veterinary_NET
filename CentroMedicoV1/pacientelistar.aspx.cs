@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace CentroMedicoV1
 {
-    public partial class medicolistar : System.Web.UI.Page
+    public partial class pacientelistar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,25 +24,27 @@ namespace CentroMedicoV1
             TableRow r;
             TableCell c;
 
-            List<Medico> lista = BussMedico.Listar02();
-            foreach (Medico obj in lista)
+            List<Paciente> lista = BussPaciente.Listar02();
+            foreach (Paciente obj in lista)
             {
                 r = new TableRow();
                 tblMedicos.Rows.Add(r);
 
-                c = new TableCell(); c.Text = obj.Idmedico.ToString(); r.Cells.Add(c);
-                c = new TableCell(); c.Text = obj.NomMedico.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = obj.Idpaciente.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = obj.NomPaciente.ToString(); r.Cells.Add(c);
                 c = new TableCell(); c.Text = obj.Email.ToString(); r.Cells.Add(c);
                 c = new TableCell(); c.Text = obj.Telefono.ToString(); r.Cells.Add(c);
-                c = new TableCell(); c.Text = obj.NomEspecialidad; r.Cells.Add(c);
+                c = new TableCell(); c.Text = obj.Genero.ToString(); r.Cells.Add(c);
+                c = new TableCell(); c.Text = obj.Edad.ToString(); r.Cells.Add(c);
+
 
 
                 c = new TableCell();
-                c.Text = "<a href='medicoeditar.aspx?id=" + obj.Idmedico.ToString() + "'><img border='0' src='img/editar.png'></a>";
+                c.Text = "<a href='pacienteeditar.aspx?id=" + obj.Idpaciente.ToString() + "'><img border='0' src='img/editar.png'></a>";
                 r.Cells.Add(c);
 
                 c = new TableCell();
-                c.Text = "<a href='medicoborrar.aspx?id=" + obj.Idmedico.ToString() + "'><img border='0' src='img/borrar.png'></a>";
+                c.Text = "<a href='pacienteborrar.aspx?id=" + obj.Idpaciente.ToString() + "'><img border='0' src='img/borrar.png'></a>";
                 r.Cells.Add(c);
             }
         }

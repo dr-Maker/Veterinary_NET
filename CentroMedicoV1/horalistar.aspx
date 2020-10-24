@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Horas</title>
+    <title>Listado de Horas</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
@@ -17,21 +17,21 @@
                         <div class="col-md-10">
                             <h2 >Lista de horas</h2>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-center">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                     
-                   <a href="horanuevo.aspx">Definir hora</a>
+                   <a class="btn btn-primary" href="horanuevo.aspx"><img border='0' src="img/add.png" />Definir hora</a>
                 </div>
                 <div class="card-body">
                     <asp:Table 
                         ID="tblHora" 
                         runat="server" 
-                        CssClass="table table-bordered table-striped">
+                        CssClass="table table-bordered table-striped text-center">
                         <asp:TableRow runat="server" TableSection="TableHeader">
                             <asp:TableCell runat="server">Id.Hora</asp:TableCell>
                             <asp:TableCell runat="server">Fecha</asp:TableCell>
@@ -43,6 +43,9 @@
                             <asp:TableCell runat="server">Eliminar</asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
+                     <p>
+                        <a class="btn btn-info" href="menu.aspx">Volver</a>
+                    </p>
                 </div>
             </div>
         </div>

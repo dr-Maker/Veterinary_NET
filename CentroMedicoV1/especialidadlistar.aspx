@@ -17,19 +17,19 @@
                         <div class="col-md-10">
                             <h2 >Lista de Especialidad</h2>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-center">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
-                   <p> <a href="reservanuevo.aspx">nueva especialidad</a> </p>
+                   <p> <a class="btn btn-primary"  href="especialidadnuevo.aspx"><img border='0' src="img/add.png" /> Nueva especialidad</a> </p>
                 </div>
                 
                 <div class="card-body">
 
-                    <asp:Table runat="server" ID="tblEspecialidad" CssClass="table table-bordered table-striped"> 
+                    <asp:Table runat="server" ID="tblEspecialidad" CssClass="table table-bordered table-striped text-center"> 
                         <asp:TableRow runat="server" TableSection="TableHeader">
                             <asp:TableCell runat="server">Id.Especialidad</asp:TableCell>
                             <asp:TableCell runat="server">Descripción</asp:TableCell>
@@ -37,7 +37,9 @@
                             <asp:TableCell runat="server">Eliminar</asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
-
+                     <p>
+                        <a class="btn btn-info" href="menu.aspx">Volver</a>
+                    </p>
                 </div>
 
             </div>

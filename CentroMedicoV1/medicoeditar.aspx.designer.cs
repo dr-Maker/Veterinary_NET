@@ -10,7 +10,7 @@
 namespace CentroMedicoV1 {
     
     
-    public partial class reservaborrar {
+    public partial class medicoeditar {
         
         /// <summary>
         /// Control form1.
@@ -22,24 +22,6 @@ namespace CentroMedicoV1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control idreserva.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idreserva;
-        
-        /// <summary>
-        /// Control dlespecialidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dlespecialidad;
-        
-        /// <summary>
         /// Control idmedico.
         /// </summary>
         /// <remarks>
@@ -49,48 +31,57 @@ namespace CentroMedicoV1 {
         protected global::System.Web.UI.WebControls.TextBox idmedico;
         
         /// <summary>
-        /// Control idpaciente.
+        /// Control nombres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idpaciente;
+        protected global::System.Web.UI.WebControls.TextBox nombres;
         
         /// <summary>
-        /// Control tbfecha.
+        /// Control apellidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbfecha;
+        protected global::System.Web.UI.WebControls.TextBox apellidos;
         
         /// <summary>
-        /// Control dlHoraMinuto.
+        /// Control email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dlHoraMinuto;
+        protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
-        /// Control tbidhora.
+        /// Control telefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbidhora;
+        protected global::System.Web.UI.WebControls.TextBox telefono;
         
         /// <summary>
-        /// Control btnBorrar.
+        /// Control idespecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBorrar;
+        protected global::System.Web.UI.WebControls.DropDownList idespecialidad;
+        
+        /// <summary>
+        /// Control btnGrabar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGrabar;
     }
 }

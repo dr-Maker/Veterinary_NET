@@ -17,11 +17,11 @@
                         <div class="col-md-10">
                             <h2 >Borrar Estado</h2>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-center">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -44,8 +44,8 @@
                         <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                     </div>
 
-                    <p>
-                        <a  href="estadolistar.aspx">Volver</a>
+                     <p>
+                        <a class="btn btn-info" href="estadolistar.aspx">Volver</a>
                     </p>
                 </div>
             </div>

@@ -89,9 +89,15 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery-3.3.1.js" />
     <Content Include="logout.aspx" />
+    <Content Include="medicoborrar.aspx" />
+    <Content Include="medicoeditar.aspx" />
     <Content Include="medicolistar.aspx" />
     <Content Include="mediconuevo.aspx" />
     <Content Include="menu.aspx" />
+    <Content Include="pacienteborrar.aspx" />
+    <Content Include="pacienteeditar.aspx" />
+    <Content Include="pacientelistar.aspx" />
+    <Content Include="pacientenuevo.aspx" />
     <Content Include="reservaborrar.aspx" />
     <Content Include="reservaeditar.aspx" />
     <Content Include="reservalistar.aspx" />
@@ -208,6 +214,20 @@
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="medicoborrar.aspx.cs">
+      <DependentUpon>medicoborrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="medicoborrar.aspx.designer.cs">
+      <DependentUpon>medicoborrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="medicoeditar.aspx.cs">
+      <DependentUpon>medicoeditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="medicoeditar.aspx.designer.cs">
+      <DependentUpon>medicoeditar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="medicolistar.aspx.cs">
       <DependentUpon>medicolistar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -236,6 +256,34 @@
     <Compile Include="Modelos\Paciente.cs" />
     <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Modelos\UsuarioModel.cs" />
+    <Compile Include="pacienteborrar.aspx.cs">
+      <DependentUpon>pacienteborrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pacienteborrar.aspx.designer.cs">
+      <DependentUpon>pacienteborrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pacienteeditar.aspx.cs">
+      <DependentUpon>pacienteeditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pacienteeditar.aspx.designer.cs">
+      <DependentUpon>pacienteeditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pacientelistar.aspx.cs">
+      <DependentUpon>pacientelistar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pacientelistar.aspx.designer.cs">
+      <DependentUpon>pacientelistar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pacientenuevo.aspx.cs">
+      <DependentUpon>pacientenuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pacientenuevo.aspx.designer.cs">
+      <DependentUpon>pacientenuevo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reservaborrar.aspx.cs">
       <DependentUpon>reservaborrar.aspx</DependentUpon>

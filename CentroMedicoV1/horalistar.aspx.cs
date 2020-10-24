@@ -47,12 +47,12 @@ namespace CentroMedicoV1
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
-                c.Text = "<a  href='horaeditar.aspx?id="+ item.Idhora.ToString() + "'>Editar</a>";
+                c.Text = "<a  href='horaeditar.aspx?id="+ item.Idhora.ToString() + "'><img border='0' src='img/editar.png'></a>";
                 r.Cells.Add(c);
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
-                c.Text = "<a href='horaborrar.aspx?id=" + item.Idhora.ToString() + "'>Borrar</a>";
+                c.Text = "<a href='horaborrar.aspx?id=" + item.Idhora.ToString() + "'><img border='0' src='img/borrar.png'></a>";
                 r.Cells.Add(c);
             }
         }

@@ -30,26 +30,36 @@
                 <div class="card-body">
                      <div class="form-group">
                         <asp:Label runat="server" Text="Id.Reserva" />
-                        <asp:TextBox  CssClass="form-control" ID="idhora" runat="server" />
+                        <asp:TextBox ReadOnly="true" CssClass="form-control" ID="idreserva" runat="server" />
+                    </div>
+
+                    <div class="form-group">
+                        <asp:Label runat="server" Text="Especialidad" />
+                        <asp:DropDownList  CssClass="form-control" ID="dlespecialidad" runat="server" AutoPostBack="True" OnSelectedIndexChanged="EspecialidadSelected" />
                     </div>
 
                      <div class="form-group">
                         <asp:Label runat="server" Text="Medico" />
-                        <asp:TextBox  CssClass="form-control" ID="TextBox1" runat="server" />
+                        <asp:DropDownList  CssClass="form-control" ID="idmedico" runat="server" />
                     </div>
 
                      <div class="form-group">
                         <asp:Label runat="server" Text="Paciente" />
-                        <asp:TextBox   CssClass="form-control" ID="TextBox2" runat="server" />
+                        <asp:DropDownList   CssClass="form-control" ID="idpaciente" runat="server" />
                     </div>
 
                     <div class="form-group">
-                        <asp:Label runat="server" Text="Hora" />
-                        <asp:TextBox   CssClass="form-control" ID="TextBox3" runat="server" />
+                        <asp:Label runat="server" Text="Fecha" />
+                        <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="tbfecha" OnTextChanged="tbfecha_TextChanged" AutoPostBack="True"   />
                    </div>
 
                    <div class="form-group">
-                        <asp:Button ID="btnGrabar" CssClass="btn btn-info" runat="server" Text="Grabar" />
+                        <asp:Label runat="server" Text="Hora" />
+                        <asp:DropDownList   CssClass="form-control" ID="dlHoraMinuto" runat="server" />
+                   </div>
+
+                   <div class="form-group">
+                        <asp:Button ID="btnGrabar" CssClass="btn btn-info" runat="server" Text="Grabar" OnClick="btnGrabar_Click" />
                    </div>
 
                 </div>

@@ -12,6 +12,11 @@ namespace CentroMedicoV1
 {
     public partial class reservalistar : System.Web.UI.Page
     {
+
+        int medico;
+        string fecha ="";
+        int especialidad;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,35 +25,43 @@ namespace CentroMedicoV1
                 Response.Redirect("index.aspx");
             }
 
-            DataTable dtm = BussMedico.Listar();
-            ddlMedico.Items.Add(new ListItem("Seleccione..", ""));
-            foreach (DataRow r in dtm.Rows)
+
+            if (!IsPostBack)
             {
-                string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
-                string valor = r["idmedico"].ToString();
-                ddlMedico.Items.Add(new ListItem(texto, valor));
+
+                DataTable dtm = BussMedico.Listar();
+                ddlMedico.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dtm.Rows)
+                {
+                    string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                    string valor = r["idmedico"].ToString();
+                    ddlMedico.Items.Add(new ListItem(texto, valor));
+                }
+
+                DataTable dte = BussEspecialidad.Listar();
+                ddlEspecialidad.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dte.Rows)
+                {
+                    string texto = r["descripcion"].ToString();
+                    string valor = r["idespecialidad"].ToString();
+                    ddlEspecialidad.Items.Add(new ListItem(texto, valor));
+
+                }
+
+                LlenarTabla(especialidad, fecha, medico);
             }
-
-            DataTable dte = BussEspecialidad.Listar();
-            ddlEspecialidad.Items.Add(new ListItem("Seleccione..", ""));
-            foreach (DataRow r in dte.Rows)
-            {
-                string texto = r["descripcion"].ToString();
-                string valor = r["idespecialidad"].ToString();
-                ddlEspecialidad.Items.Add(new ListItem(texto, valor));
-               
-            }
-
-            LlenarTabla();
-
-
+           
+            
         }
-        public void LlenarTabla()
+        public void LlenarTabla(int especialidad, string fecha, int idmedico)
         {
+
+            tblEspecialidad.Rows.Clear();
+
             TableRow r;
             TableCell c;
 
-            List<Reserva> lista = BussReserva.Listar02();
+            List<Reserva> lista = BussReserva.Listar02(especialidad, fecha, idmedico);
             foreach (Reserva obj in lista)
             {
                 r = new TableRow();
@@ -63,14 +76,83 @@ namespace CentroMedicoV1
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
-                c.Text = "<a  href='reservaeditar.aspx?id=" + obj.Idreserva.ToString() + "'>Editar</a>";
+                c.Text = "<a  href='reservaeditar.aspx?id=" + obj.Idreserva.ToString() + "'><img border='0' src='img/editar.png'></a>";
                 r.Cells.Add(c);
 
                 c = new TableCell();
                 c.HorizontalAlign = HorizontalAlign.Center;
-                c.Text = "<a href='reservaborrar.aspx?id=" + obj.Idreserva.ToString() + "'>Borrar</a>";
+                c.Text = "<a href='reservaborrar.aspx?id=" + obj.Idreserva.ToString() + "'><img border='0' src='img/borrar.png'></a>";
                 r.Cells.Add(c);
             }
+        }
+
+        protected void txtFecha_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                especialidad = int.Parse(ddlEspecialidad.Text);
+            }
+            catch (Exception)
+            {
+                especialidad = 0;
+            }
+            try
+            {
+                medico = int.Parse(ddlMedico.Text);
+            }
+            catch (Exception)
+            {
+                medico = 0;
+            }
+            fecha = txtFecha.Text;
+            LlenarTabla(especialidad, fecha, medico);
+        }
+
+        protected void ddlMedico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            try
+            {
+                especialidad = int.Parse(ddlEspecialidad.Text);
+            }
+            catch (Exception)
+            {
+                especialidad = 0;
+            }
+            try
+            {
+                medico = int.Parse(ddlMedico.Text);
+            }
+            catch (Exception)
+            {
+                medico = 0;
+            }
+            fecha = txtFecha.Text;
+            LlenarTabla(especialidad, fecha, medico);
+
+        }
+        protected void ddlEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                especialidad = int.Parse(ddlEspecialidad.Text);
+            }
+            catch (Exception)
+            {
+                especialidad = 0;
+            }
+            try
+            {
+                medico = int.Parse(ddlMedico.Text);
+            }
+            catch (Exception)
+            {
+                medico = 0;
+            }
+            fecha = txtFecha.Text;
+            LlenarTabla(especialidad, fecha, medico);
         }
     }
 }

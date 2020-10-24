@@ -17,36 +17,36 @@
                         <div class="col-md-10">
                             <h2 >Lista de Reservas</h2>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-center">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
-                   <p> <a href="reservanuevo.aspx">nueva reserva</a> </p>
+                   <p> <a class="btn btn-primary" href="reservanuevo.aspx"> <img border='0' src="img/add.png" /> nueva reserva</a> </p>
                 </div>
                 
                 <div class="card-body">
 
                      <div class="form-group row">
-                                <asp:Label runat="server" CssClass="col-sm-2 col-form-label" Text="Fecha" />
-                          <div class="col-sm-2">
-                                <asp:TextBox TextMode="Date" CssClass="form-control" ID="txtFecha" runat="server" />
+                                <asp:Label runat="server" CssClass="col-sm-1 col-form-label" Text="Fecha" />
+                          <div class="col-sm-3">
+                                <asp:TextBox TextMode="Date" CssClass="form-control" ID="txtFecha" runat="server" OnTextChanged="txtFecha_TextChanged" AutoPostBack="True" />
                                 <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{4}-\d{2}-\d{2}" ControlToValidate="txtFecha"/>
                           </div> 
                         <asp:Label runat="server" Text="Medico" />
                                 <div class="col-sm-3">
-                                    <asp:DropDownList CssClass="form-control" ID="ddlMedico" runat="server" />
+                                    <asp:DropDownList CssClass="form-control" ID="ddlMedico" runat="server" OnSelectedIndexChanged="ddlMedico_SelectedIndexChanged" AutoPostBack="True" />
                               </div> 
                          <asp:Label runat="server" Text="Especialidad" />
                                  <div class="col-sm-3">
-                         <asp:DropDownList CssClass="form-control" ID="ddlEspecialidad" runat="server" />
+                         <asp:DropDownList CssClass="form-control" ID="ddlEspecialidad" runat="server" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged" AutoPostBack="True" />
                                  </div>
 
                     </div>
 
-                    <asp:Table runat="server" ID="tblEspecialidad" CssClass="table table-bordered table-striped"> 
+                    <asp:Table runat="server" ID="tblEspecialidad" CssClass="table table-bordered table-striped text-center"> 
                         <asp:TableRow runat="server" TableSection="TableHeader">
                             <asp:TableCell runat="server">Id.Reserva</asp:TableCell>
                             <asp:TableCell runat="server">Fecha</asp:TableCell>
@@ -58,12 +58,12 @@
                             <asp:TableCell runat="server">Eliminar</asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
-
+                    <p>
+                        <a class="btn btn-info" href="menu.aspx">Volver</a>
+                    </p>
                 </div>
-
             </div>
         </div>
-    </form>
     </form>
 </body>
 </html>

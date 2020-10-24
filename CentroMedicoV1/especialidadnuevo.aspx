@@ -17,11 +17,11 @@
                         <div class="col-md-10">
                             <h2 >Nueva Especialidad</h2>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-center">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -35,8 +35,8 @@
 
                      <div class="form-group">
                         <asp:Label runat="server" Text="Especialidad" />
-                        <asp:TextBox  CssClass="form-control" ID="txtespecialidad" runat="server" />
-                        <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Requerido" ControlToValidate="txtespecialidad"/>
+                        <asp:TextBox  CssClass="form-control" ID="txtespecialidad" placeholder="Ingrese nueva especialidad Medica" runat="server" />
+                        <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="El campo especialidad es requerido" ControlToValidate="txtespecialidad"/>
                     </div>
 
 
@@ -45,7 +45,7 @@
                     </div>
 
                     <p>
-                        <a  href="especialidadlistar.aspx">Volver</a>
+                        <a class="btn btn-info" href="especialidadlistar.aspx">Volver</a>
                     </p>
                 </div>
             </div>
