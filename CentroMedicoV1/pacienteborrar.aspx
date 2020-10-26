@@ -21,7 +21,7 @@
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -57,9 +57,11 @@
                         <asp:TextBox CssClass="form-control" ID="edad" ReadOnly="true" runat="server"/> 
                     </div>
                     <div class="form-group">
-                        <asp:Button   CssClass="btn btn-danger"  ID="btnEliminar" runat="server"  Text="Eliminar" OnClick="btnEliminar_Click"  />
-                
+                        <asp:Button   CssClass="btn btn-danger"  ID="btnEliminar" runat="server"  Text="Eliminar" OnClick="btnEliminar_Click"  />               
                     </div>
+                    <p>
+                        <a class="btn btn-info" href="horalistar.aspx">Volver</a>
+                    </p>
                 </div>
             </div>
          </div>             

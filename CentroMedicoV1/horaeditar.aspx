@@ -21,7 +21,7 @@
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     </div>
 
                     <p>
-                        <a  href="horalistar.aspx">Volver</a>
+                        <a class="btn btn-info" href="horalistar.aspx">Volver</a>
                     </p>
                 </div>
             </div>

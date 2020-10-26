@@ -21,7 +21,7 @@
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -36,6 +36,7 @@
                         <asp:TextBox CssClass="form-control" ID="nombres" runat="server" />
                         <asp:RequiredFieldValidator
                             runat="server"
+                            CssClass="alert alert-danger"
                             ErrorMessage="Nombres es requerido"
                             ControlToValidate="nombres" />
 
@@ -59,16 +60,20 @@
                         <asp:RequiredFieldValidator
                             runat="server"
                             ErrorMessage="Especialidad es requerido"
+                             CssClass="alert alert-danger"
                             ControlToValidate="idespecialidad" />
                     </div>
                     <div class="form-group">
                         <asp:Button
-                            CssClass="btn btn-info"
+                            CssClass="btn btn-primary"
                             ID="btnGrabar"
                             runat="server"
                             Text="Grabar"
                             OnClick="btnGrabar_Click" />
                     </div>
+                    <p>
+                        <a class="btn btn-info" href="horalistar.aspx">Volver</a>
+                    </p>
                 </div>
             </div>
          </div>             

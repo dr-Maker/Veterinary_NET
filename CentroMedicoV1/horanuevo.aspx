@@ -22,7 +22,7 @@
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString() + "<br>");
                             %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -63,11 +63,11 @@
 
 
                     <div class="form-group">
-                        <asp:Button ID="btnGrabar" CssClass="btn btn-info" runat="server" Text="Grabar" OnClick="btnGrabar_Click"/>
+                        <asp:Button ID="btnGrabar" CssClass="btn btn-primary" runat="server" Text="Grabar" OnClick="btnGrabar_Click"/>
                     </div>
 
                     <p>
-                        <a  href="horalistar.aspx">Volver</a>
+                        <a class="btn btn-info" href="horalistar.aspx">Volver</a>
                     </p>
                 </div>
 

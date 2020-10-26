@@ -17,11 +17,11 @@
                         <div class="col-md-10">
                             <h2>Editar Reserva</h2>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-center">
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString() + "<br>");
                             %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
 
                      <div class="form-group">
                         <asp:Label runat="server" Text="Medico" />
-                        <asp:DropDownList  CssClass="form-control" ID="idmedico" runat="server" />
+                        <asp:DropDownList  CssClass="form-control" ID="idmedico" runat="server" AutoPostBack="True" OnSelectedIndexChanged="idmedico_SelectedIndexChanged" />
                     </div>
 
                      <div class="form-group">
@@ -57,10 +57,15 @@
                    </div>
 
                    <div class="form-group">
-                        <asp:Button ID="btnGrabar" CssClass="btn btn-info" runat="server" Text="Grabar" OnClick="btnGrabar_Click" />
+                        <asp:Button ID="btnGrabar" CssClass="btn btn-success" runat="server" Text="Actualizar" OnClick="btnGrabar_Click" />
                    </div>
 
+                        <asp:TextBox runat="server" ID="tbidhoraantiguo" />
                 </div>
+
+                   <p>
+                        <a class="btn btn-info" href="reservalistar.aspx">Volver</a>
+                   </p>
             </div>
         </div>
 

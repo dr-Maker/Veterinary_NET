@@ -21,31 +21,30 @@ namespace CentroMedicoV1
 
             if (!IsPostBack)
             {
-                DataTable dtm = BussReserva.Listar();
-                idmedico.Items.Add(new ListItem("Todos los medicos", ""));
 
-                foreach (DataRow r in dtm.Rows)
+                DataTable dtesp = BussEspecialidad.Listar();
+                dlespecialidad.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dtesp.Rows)
                 {
-                    string texto = r["medico_nombre"].ToString() + " " + r["medico_apellido"].ToString();
-                    string valor = r["idmedico"].ToString();
-                    idmedico.Items.Add(new ListItem(texto, valor));
-                }
-
-
-                dlespecialidad.Items.Add(new ListItem("Todas las especialidades Medicas", ""));
-
-                foreach (DataRow r in dtm.Rows)
-                {
-                    string texto = r["especialidad"].ToString();
+                    string texto = r["descripcion"].ToString();
                     string valor = r["idespecialidad"].ToString();
                     dlespecialidad.Items.Add(new ListItem(texto, valor));
                 }
 
-
-                idpaciente.Items.Add(new ListItem("Seleccione..", ""));
-                foreach (DataRow r in dtm.Rows)
+                DataTable dtmed = BussMedico.Listar();
+                idmedico.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dtmed.Rows)
                 {
-                    string texto = r["paciente_nombres"].ToString() + " " + r["paciente_apellidos"].ToString();
+                    string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                    string valor = r["idmedico"].ToString();
+                    idmedico.Items.Add(new ListItem(texto, valor));
+                }
+
+                DataTable dtpac = BussPaciente.Listar();
+                idpaciente.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dtpac.Rows)
+                {
+                    string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
                     string valor = r["idpaciente"].ToString();
                     idpaciente.Items.Add(new ListItem(texto, valor));
                 }
@@ -62,9 +61,8 @@ namespace CentroMedicoV1
                         idpaciente.Text = obj.Paciente.Idpaciente.ToString();
                         tbfecha.Text = obj.Hora.FechaTxtBox.ToString();
                         dlHoraMinuto.Items.Add(new ListItem(obj.Hora.HoraMinutoTxt.ToString(), obj.Hora.Idhora.ToString()));
-
-
-
+                        tbidhoraantiguo.Text = obj.Hora.Idhora.ToString();
+                        tbidhoraantiguo.Visible = false;
                     }
                     else
                     {
@@ -75,7 +73,6 @@ namespace CentroMedicoV1
                 {
                     Response.Redirect("reservalistar.aspx");
                 }
-
             }
 
         }
@@ -102,7 +99,11 @@ namespace CentroMedicoV1
                 string valor = r["idmedico"].ToString();
                 idmedico.Items.Add(new ListItem(texto, valor));
             }
+
+            tbfecha.Text = "";
+            dlHoraMinuto.Items.Clear();
         }
+
 
         protected void tbfecha_TextChanged(object sender, EventArgs e)
         {
@@ -131,9 +132,42 @@ namespace CentroMedicoV1
             }
         }
 
+        protected void idmedico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbfecha.Text = "";
+            dlHoraMinuto.Items.Clear();
+        }
+
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                int idhoraanterior;
+
+                Reserva obj = new Reserva();
+                obj.Idreserva = int.Parse(idreserva.Text);
+
+                obj.Medico = new Medico();
+                obj.Medico.Idmedico = int.Parse(idmedico.Text);
+
+                obj.Paciente = new Paciente();
+                obj.Paciente.Idpaciente = int.Parse(idpaciente.Text);
+
+                obj.Hora = new Hora();
+                obj.Hora.Idhora = int.Parse(dlHoraMinuto.Text);
+
+                 idhoraanterior = int.Parse(tbidhoraantiguo.Text);
+
+
+                BussReserva.Update(obj, idhoraanterior);
+                Response.Redirect("reservalistar.aspx");
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

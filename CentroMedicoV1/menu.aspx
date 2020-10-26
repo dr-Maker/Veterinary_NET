@@ -27,13 +27,13 @@
                     </div>
                 </div>
                 
-                <div class="card-body">
-                    <p> <a href="horalistar.aspx">Hora </a></p>
-                    <p> <a href="medicolistar.aspx">Medico</a></p>
-                    <p> <a href="estadolistar.aspx">Estado</a></p>
-                    <p> <a href="especialidadlistar.aspx">Especialidad</a></p>
-                    <p> <a href="pacientelistar.aspx">Paciente</a></p>
-                    <p> <a href="reservalistar.aspx">Reserva</a></p>
+                <div class="card-body text-center">
+                    <p> <a class="btn btn-primary col-md-3" href="horalistar.aspx">Hora </a></p>
+                    <p> <a class="btn btn-primary col-md-3" href="medicolistar.aspx">Medico</a></p>
+                    <p> <a class="btn btn-primary col-md-3" href="estadolistar.aspx">Estado</a></p>
+                    <p> <a class="btn btn-primary col-md-3" href="especialidadlistar.aspx">Especialidad</a></p>
+                    <p> <a class="btn btn-primary col-md-3" href="pacientelistar.aspx">Paciente</a></p>
+                    <p> <a class="btn btn-primary col-md-3" href="reservalistar.aspx">Reserva</a></p>
                 </div>
             </div>
         </div>

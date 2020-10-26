@@ -22,34 +22,33 @@ namespace CentroMedicoV1
 
             if (!IsPostBack)
             {
-                DataTable dtm = BussReserva.Listar();
-                idmedico.Items.Add(new ListItem("Seleccione..", ""));
-
-                foreach (DataRow r in dtm.Rows)
-                {
-                    string texto = r["medico_nombre"].ToString() + " " + r["medico_apellido"].ToString();
-                    string valor = r["idmedico"].ToString();
-                    idmedico.Items.Add(new ListItem(texto, valor));
-                }
-
-                
+                DataTable dtesp = BussEspecialidad.Listar();
                 dlespecialidad.Items.Add(new ListItem("Seleccione..", ""));
-
-                foreach (DataRow r in dtm.Rows)
+                foreach (DataRow r in dtesp.Rows)
                 {
-                    string texto = r["especialidad"].ToString();
+                    string texto = r["descripcion"].ToString();
                     string valor = r["idespecialidad"].ToString();
                     dlespecialidad.Items.Add(new ListItem(texto, valor));
                 }
 
-
-                idpaciente.Items.Add(new ListItem("Seleccione..", ""));
-                foreach (DataRow r in dtm.Rows)
+                DataTable dtmed = BussMedico.Listar();
+                idmedico.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dtmed.Rows)
                 {
-                    string texto = r["paciente_nombres"].ToString() + " " + r["paciente_apellidos"].ToString();
+                    string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                    string valor = r["idmedico"].ToString();
+                    idmedico.Items.Add(new ListItem(texto, valor));
+                }
+
+                DataTable dtpac = BussPaciente.Listar();
+                idpaciente.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dtpac.Rows)
+                {
+                    string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
                     string valor = r["idpaciente"].ToString();
                     idpaciente.Items.Add(new ListItem(texto, valor));
                 }
+
                 dlHoraMinuto.Items.Add(new ListItem("Seleccione..", ""));
 
             }

@@ -14,7 +14,7 @@ namespace CentroMedicoV1
     {
 
         int medico;
-        string fecha ="";
+        string fecha = "";
         int especialidad;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -50,8 +50,8 @@ namespace CentroMedicoV1
 
                 LlenarTabla(especialidad, fecha, medico);
             }
-           
-            
+
+
         }
         public void LlenarTabla(int especialidad, string fecha, int idmedico)
         {
@@ -89,51 +89,21 @@ namespace CentroMedicoV1
         protected void txtFecha_TextChanged(object sender, EventArgs e)
         {
 
-            try
-            {
-                especialidad = int.Parse(ddlEspecialidad.Text);
-            }
-            catch (Exception)
-            {
-                especialidad = 0;
-            }
-            try
-            {
-                medico = int.Parse(ddlMedico.Text);
-            }
-            catch (Exception)
-            {
-                medico = 0;
-            }
-            fecha = txtFecha.Text;
-            LlenarTabla(especialidad, fecha, medico);
+            ActualizacionLlenarTabla();
         }
 
         protected void ddlMedico_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
-            try
-            {
-                especialidad = int.Parse(ddlEspecialidad.Text);
-            }
-            catch (Exception)
-            {
-                especialidad = 0;
-            }
-            try
-            {
-                medico = int.Parse(ddlMedico.Text);
-            }
-            catch (Exception)
-            {
-                medico = 0;
-            }
-            fecha = txtFecha.Text;
-            LlenarTabla(especialidad, fecha, medico);
+            ActualizacionLlenarTabla();
 
         }
         protected void ddlEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ActualizacionLlenarTabla();
+        }
+
+        public void ActualizacionLlenarTabla()
         {
             try
             {

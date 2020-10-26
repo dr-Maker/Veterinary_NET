@@ -34,6 +34,7 @@
                         <asp:Label runat="server" Text="Nombres" />
                         <asp:TextBox CssClass="form-control" ID="nombres" runat="server" />
                         <asp:RequiredFieldValidator
+                            CssClass="alert alert-danger"
                             runat="server"
                             ErrorMessage="Nombres es requerido"
                             ControlToValidate="nombres" />
@@ -43,6 +44,7 @@
                         <asp:Label runat="server" Text="Apellidos" />
                         <asp:TextBox CssClass="form-control" ID="apellidos" runat="server" />
                         <asp:RequiredFieldValidator
+                            CssClass="alert alert-danger"
                             runat="server"
                             ErrorMessage="Apellidos es requerido"
                             ControlToValidate="apellidos" />
@@ -51,10 +53,12 @@
                         <asp:Label runat="server" Text="Email" />
                         <asp:TextBox CssClass="form-control" ID="email" runat="server" />
                         <asp:RequiredFieldValidator
+                            CssClass="alert alert-danger"
                             runat="server"
                             ErrorMessage="Email es requerido"
                             ControlToValidate="email" />
                         <asp:RegularExpressionValidator
+                            CssClass="alert alert-danger"
                             runat="server"
                             ErrorMessage="Formato de email incorrecto"
                             ValidationExpression ="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
@@ -64,10 +68,12 @@
                         <asp:Label runat="server" Text="Teléfono" />
                         <asp:TextBox CssClass="form-control" ID="telefono" runat="server" />
                         <asp:RequiredFieldValidator
+                            CssClass="alert alert-danger"
                             runat="server"
                             ErrorMessage="Teléfono es requerido"
                             ControlToValidate="telefono" />
                         <asp:RegularExpressionValidator
+                            CssClass="alert alert-danger"
                             runat="server"
                             ErrorMessage="Teléfono debe tener 9 dígitos"
                             ValidationExpression="\d{9}"
@@ -78,6 +84,7 @@
                         <asp:DropDownList CssClass="form-control" ID="idespecialidad" runat="server">
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator
+                            CssClass="alert alert-danger"
                             runat="server"
                             ErrorMessage="Especialidad es requerido"
                             ControlToValidate="idespecialidad" />
@@ -91,6 +98,9 @@
                            
                              />
                     </div>
+                     <p>
+                        <a class="btn btn-info" href="horalistar.aspx">Volver</a>
+                    </p>
                 </div>
             </div>
         </div>

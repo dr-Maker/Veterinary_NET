@@ -67,13 +67,22 @@ namespace CentroMedicoV1 {
         protected global::System.Web.UI.WebControls.TextBox telefono;
         
         /// <summary>
-        /// Control genero.
+        /// Control rbm.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox genero;
+        protected global::System.Web.UI.WebControls.RadioButton rbm;
+        
+        /// <summary>
+        /// Control rbf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbf;
         
         /// <summary>
         /// Control edad.

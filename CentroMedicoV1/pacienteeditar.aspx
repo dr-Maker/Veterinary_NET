@@ -21,7 +21,7 @@
                             <%
                                 Response.Write("Hola " + Session["usuario"].ToString()+ "<br>");
                                 %>
-                            <a href="logout.aspx">Cerrar sesión</a>
+                            <a class="btn btn-secondary" href="logout.aspx">Cerrar sesión</a>
                         </div>
                     </div>
                 </div>
@@ -48,18 +48,33 @@
                         <asp:Label runat="server" Text="Teléfono" />
                         <asp:TextBox CssClass="form-control" ID="telefono" runat="server" TextMode="Number" />
                     </div>
-                    <div class="form-group">
-                        <asp:Label runat="server" Text="Genero" />
-                        <asp:TextBox CssClass="form-control" ID="genero" runat="server" /> 
-                    </div>
+
+                   <fieldset class="form-group">
+                       <div class="row">                  
+                           <div class="col-sm-10">   
+                                 <asp:Label runat="server" Text="Genero" />  
+                               <div class="form-check">                                         
+                                    <asp:RadioButton runat="server" CssClass="form-check-label" Text="M" ID="rbm" AutoPostBack="True" OnCheckedChanged="rbm_CheckedChanged" />                               
+                               </div>
+                              
+                               <div class="form-check">                                     
+                                   <asp:RadioButton runat="server" CssClass="form-check-label" Text="F" ID="rbf" AutoPostBack="True" OnCheckedChanged="rbf_CheckedChanged" />
+                               </div>
+                           </div>
+                        </div>
+                    </fieldset>
+
                     <div class="form-group">
                         <asp:Label runat="server" Text="Edad" />
-                        <asp:TextBox CssClass="form-control" ID="edad" runat="server"/> 
+                        <asp:TextBox CssClass="form-control" TextMode="Number" ID="edad" runat="server"/> 
                     </div>
+
                     <div class="form-group">
-                        <asp:Button   CssClass="btn btn-info"  ID="btnGrabar" runat="server"  Text="Grabar" OnClick="btnGrabar_Click" />
-                
+                        <asp:Button   CssClass="btn btn-success"  ID="btnGrabar" runat="server"  Text="Actualizar" OnClick="btnGrabar_Click" />               
                     </div>
+                    <p>
+                        <a class="btn btn-info" href="horalistar.aspx">Volver</a>
+                    </p>
                 </div>
             </div>
          </div>             
