@@ -39,41 +39,56 @@
                     <div class="form-group">
                         <asp:Label runat="server" Text="Apellidos" />
                         <asp:TextBox CssClass="form-control" ID="apellidos" runat="server" />
+                        <asp:RequiredFieldValidator  CssClass="alert alert-danger" runat="server" ErrorMessage="Apellido es requerido" ControlToValidate="apellidos" />
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Email" />
                         <asp:TextBox CssClass="form-control" ID="email" runat="server" TextMode="Email" />
+                        <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="el email es requerido" ControlToValidate="email" />
+                        <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Error en el formato del correo" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" ControlToValidate="email"/>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Teléfono" />
                         <asp:TextBox CssClass="form-control" ID="telefono" runat="server" TextMode="Number" />
+                        <asp:RequiredFieldValidator
+                            CssClass="alert alert-danger"
+                            runat="server"
+                            ErrorMessage="Teléfono es requerido"
+                            ControlToValidate="telefono" />
+                        <asp:RegularExpressionValidator
+                            CssClass="alert alert-danger"
+                            runat="server"
+                            ErrorMessage="Teléfono debe tener 9 dígitos"
+                            ValidationExpression="\d{9}"
+                            ControlToValidate="telefono" />
                     </div>
 
-                    <fieldset class="form-group">
-                       <div class="row">                  
-                           <div class="col-sm-10">   
-                                 <asp:Label runat="server" Text="Genero" />  
-                               <div class="form-check">                                         
-                                    <asp:RadioButton runat="server" CssClass="form-check-label" Text="M" ID="rbm" AutoPostBack="True" OnCheckedChanged="rbm_CheckedChanged" />                               
-                               </div>
-                              
-                               <div class="form-check">                                     
-                                   <asp:RadioButton runat="server" CssClass="form-check-label" Text="F" ID="rbf" AutoPostBack="True" OnCheckedChanged="rbf_CheckedChanged" />
-                               </div>
-                           </div>
-                        </div>
-                    </fieldset>
+                    <div>
+                        <asp:Label runat="server" Text="Genero" ID="genero" />
+                        <asp:RadioButtonList ID="rblgenero" runat="server" >
+                            <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
+                            <asp:ListItem Text="Femenino" Value="F"></asp:ListItem>
+                        </asp:RadioButtonList>
+                        <asp:RequiredFieldValidator 
+                        runat="server"
+                        ControlToValidate="rblgenero"
+                        CssClass="alert alert-danger"
+                        ErrorMessage="Es necesario seleccionar un genero"
+                        />
+                    </div>
+
 
                     <div class="form-group">
                         <asp:Label runat="server" Text="Edad" />
                         <asp:TextBox CssClass="form-control" TextMode="Number" ID="edad" runat="server"/> 
+                        <asp:RangeValidator runat="server" controltovalidate="edad" type="Integer" minimumvalue="0" maximumvalue="120" errormessage="La edad ingresada es inválida" CssClass="alert alert-danger"/>
                     </div>
                     <div class="form-group">
                         <asp:Button CssClass="btn btn-primary"  ID="btnGrabar" runat="server"  Text="Grabar" OnClick="btnGrabar_Click" />           
                     </div>
                 </div>
                     <p>
-                        <a class="btn btn-info" href="horalistar.aspx">Volver</a>
+                        <a class="btn btn-info" href="pacientelistar.aspx">Volver</a>
                     </p>
             </div>
          </div>             

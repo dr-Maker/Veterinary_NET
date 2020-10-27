@@ -44,14 +44,28 @@
                     <div class="form-group">
                         <asp:Label runat="server" Text="Apellidos" />
                         <asp:TextBox CssClass="form-control" ID="apellidos" runat="server" />
+                        <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="el apellido es requerido" ControlToValidate="apellidos" />
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Email" />
                         <asp:TextBox CssClass="form-control" ID="email" runat="server" TextMode="Email" />
+                        <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="el email es requerido" ControlToValidate="email" />
+                        <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Error en el formato del correo" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" ControlToValidate="email"/>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Teléfono" />
                         <asp:TextBox CssClass="form-control" ID="telefono" runat="server" TextMode="Number" />
+                         <asp:RequiredFieldValidator
+                            CssClass="alert alert-danger"
+                            runat="server"
+                            ErrorMessage="Teléfono es requerido"
+                            ControlToValidate="telefono" />
+                        <asp:RegularExpressionValidator
+                            CssClass="alert alert-danger"
+                            runat="server"
+                            ErrorMessage="Teléfono debe tener 9 dígitos"
+                            ValidationExpression="\d{9}"
+                            ControlToValidate="telefono" />
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" Text="Especialidad" />

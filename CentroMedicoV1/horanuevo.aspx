@@ -44,13 +44,13 @@
                     <div class="form-group">
                         <asp:Label runat="server" Text="Hora minuto" />
                         <asp:TextBox  TextMode="Time" CssClass="form-control" ID="horaminuto" runat="server" />
-                         <asp:RequiredFieldValidator runat="server" ErrorMessage="Requerido" ControlToValidate="horaminuto"/>
+                         <asp:RequiredFieldValidator runat="server"  CssClass="alert alert-danger" ErrorMessage="Requerido" ControlToValidate="horaminuto"/>
                          <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Hora no valida" ValidationExpression="\d{2}:\d{2}" ControlToValidate="horaminuto"/>
                     </div>
 
                     <div class="form-group">
                         <asp:Label runat="server" Text="Medico" />
-                        <asp:DropDownList  CssClass="form-control" ID="idmedico" runat="server" />
+                        <asp:DropDownList  CssClass="form-control" ID="idmedico" runat="server" AutoPostBack="True" />
                          <asp:RequiredFieldValidator runat="server" CssClass="alert alert-danger" ErrorMessage="Requerido" ControlToValidate="idestado"/>
                     </div>
 

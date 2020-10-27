@@ -104,6 +104,13 @@ namespace CentroMedicoV1
                 string valor = r["idhora"].ToString();
                 dlHoraMinuto.Items.Add(new ListItem(texto, valor));
             }
+                if(dtmh.Rows.Count == 0)
+                {
+                    dlHoraMinuto.Items.Clear();
+                    dlHoraMinuto.Items.Add(new ListItem("No existen horas diponibles con los datos seleccionados..", ""));
+                }
+
+
         }
 
         protected void btnGrabar_Click(object sender, EventArgs e)

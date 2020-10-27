@@ -32,18 +32,15 @@ namespace CentroMedicoV1
                         apellidos.Text = obj.Apellidos.ToString();
                         email.Text = obj.Email.ToString();
                         telefono.Text = obj.Telefono.ToString();
+                        edad.Text = obj.Edad.ToString();
                         if (obj.Genero.ToString().Equals("M"))
                         {
-                            rbm.Checked = true;
-                            rbf.Checked = false;
-                        }
-                        else
+                            rblgenero.SelectedIndex = 0;
+                        } else
                         {
-                            rbm.Checked = false;
-                            rbf.Checked = true;
+                            rblgenero.SelectedIndex = 1;
                         }
-
-                        edad.Text = obj.Edad.ToString();
+                        
                     }
                     else
                     {
@@ -58,24 +55,6 @@ namespace CentroMedicoV1
 
         }
 
-        protected void rbm_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbm.Checked)
-            {
-                rbf.Checked = false;
-                rbm.Text = "M";
-            }
-
-        }
-
-        protected void rbf_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbf.Checked)
-            {
-                rbm.Checked = false;
-                rbf.Text = "F";
-            }
-        }
 
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -87,14 +66,7 @@ namespace CentroMedicoV1
                 obj.Apellidos = apellidos.Text;
                 obj.Email = email.Text;
                 obj.Telefono = int.Parse(telefono.Text);
-                if (rbm.Checked)
-                {
-                    obj.Genero = rbm.Text;
-                }
-                else
-                {
-                    obj.Genero = rbf.Text;
-                }
+                obj.Genero = rblgenero.SelectedItem.Value;
                 obj.Edad = int.Parse(edad.Text);
 
                 BussPaciente.Update(obj);

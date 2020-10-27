@@ -39,21 +39,26 @@
                      <div class="form-group">
                         <asp:Label runat="server" Text="Medico" />
                         <asp:DropDownList  CssClass="form-control" ID="idmedico" runat="server" AutoPostBack="True" OnSelectedIndexChanged="idmedico_SelectedIndexChanged" />
-                    </div>
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="idmedico" CssClass="alert alert-danger" ErrorMessage="Se requiere la elección de un Medico"/>
+                     </div>
 
                      <div class="form-group">
                         <asp:Label runat="server" Text="Paciente" />
                         <asp:DropDownList   CssClass="form-control" ID="idpaciente" runat="server" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="idpaciente" CssClass="alert alert-danger" ErrorMessage="Se requiere la elección de un Paciente"/>
                     </div>
 
                     <div class="form-group">
                         <asp:Label runat="server" Text="Fecha" />
                         <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="tbfecha" OnTextChanged="tbfecha_TextChanged" AutoPostBack="True"   />
+                        <asp:RegularExpressionValidator runat="server" CssClass="alert alert-danger" ErrorMessage="fecha no valida" ValidationExpression="\d{4}-\d{2}-\d{2}" ControlToValidate="tbfecha"/>
+                        <asp:RequiredFieldValidator CssClass="alert alert-danger" runat="server" ErrorMessage="La fecha es requerida" ControlToValidate="tbfecha"/>
                    </div>
 
                    <div class="form-group">
                         <asp:Label runat="server" Text="Hora" />
                         <asp:DropDownList   CssClass="form-control" ID="dlHoraMinuto" runat="server" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="dlHoraMinuto" CssClass="alert alert-danger" ErrorMessage="Se requiere la elección de una Hora disponible"/>
                    </div>
 
                    <div class="form-group">

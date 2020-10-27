@@ -30,7 +30,7 @@ namespace CentroMedicoV1
                     apellidos.Text = obj.Apellidos.ToString();
                     email.Text = obj.Email.ToString();
                     telefono.Text = obj.Telefono.ToString();
-                    genero.Text = obj.Genero.ToString();
+                  
                     edad.Text = obj.Edad.ToString();
                 }
                 else

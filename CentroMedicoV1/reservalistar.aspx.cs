@@ -56,7 +56,7 @@ namespace CentroMedicoV1
         public void LlenarTabla(int especialidad, string fecha, int idmedico)
         {
 
-            tblEspecialidad.Rows.Clear();
+            
 
             TableRow r;
             TableCell c;
@@ -84,6 +84,18 @@ namespace CentroMedicoV1
                 c.Text = "<a href='reservaborrar.aspx?id=" + obj.Idreserva.ToString() + "'><img border='0' src='img/borrar.png'></a>";
                 r.Cells.Add(c);
             }
+
+                if (lista.Count ==0)
+                {
+                tblEspecialidad.Rows.Clear();
+                r = new TableRow();
+                    c = new TableCell();
+                    tblEspecialidad.Rows.Add(r);
+
+                    c.HorizontalAlign = HorizontalAlign.Center;
+                    c.Text = "No existen Reservas con los datos Seleccionados";
+                    r.Cells.Add(c);
+                }
         }
 
         protected void txtFecha_TextChanged(object sender, EventArgs e)
@@ -100,7 +112,30 @@ namespace CentroMedicoV1
         }
         protected void ddlEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActualizacionLlenarTabla();
+
+            int ddlespecialidad;
+            ddlMedico.Items.Clear();
+            try
+            {
+                ddlespecialidad = int.Parse(ddlEspecialidad.Text);
+            }
+            catch (Exception exe)
+            {
+                ddlespecialidad = 0;
+            }
+
+            DataTable dtm = BussReserva.BuscarMedicoEspecialidad(ddlespecialidad);
+            ddlMedico.Items.Add(new ListItem("Seleccione..", ""));
+
+            foreach (DataRow r in dtm.Rows)
+            {
+                string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                string valor = r["idmedico"].ToString();
+                ddlMedico.Items.Add(new ListItem(texto, valor));
+
+                ActualizacionLlenarTabla();
+            }
+
         }
 
         public void ActualizacionLlenarTabla()

@@ -22,32 +22,11 @@ namespace CentroMedicoV1
         }
 
 
-        protected void rbm_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbm.Checked)
-            {
-                rbf.Checked = false;
-                rbm.Text = "M";
-            }
-
-        }
-
-        protected void rbf_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbf.Checked)
-            {
-                rbm.Checked = false;
-                rbf.Text = "F";
-            }
-
-        }
-
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
 
             try
             {
-
                 Paciente obj = new Paciente();
 
                 obj.Idpaciente = 0;
@@ -56,15 +35,7 @@ namespace CentroMedicoV1
                 obj.Email = email.Text;
                 obj.Telefono = int.Parse(telefono.Text);
                 obj.Edad = int.Parse(edad.Text);
-
-                if (rbm.Checked)
-                {
-                    obj.Genero = rbm.Text;
-                }
-                else
-                {
-                    obj.Genero = rbf.Text;
-                }
+                obj.Genero = rblgenero.SelectedItem.Value;
 
                 BussPaciente.Insert(obj);
 

@@ -20,27 +20,28 @@ namespace CentroMedicoV1
             }
 
             // llenar los DropDownList
-            DataTable dtm = BussMedico.Listar();
-            idmedico.Items.Add(new ListItem("Seleccione..", ""));
-            foreach (DataRow r in dtm.Rows)
-            {
-                string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
-                string valor = r["idmedico"].ToString();
-                idmedico.Items.Add(new ListItem(texto, valor));
-            }
-
-            DataTable dte = BussEstado.Listar();
-            idestado.Items.Add(new ListItem("Seleccione..", ""));
-            foreach (DataRow r in dte.Rows)
-            {
-                string texto = r["descripcion"].ToString();
-                string valor = r["idestado"].ToString();
-                if (valor.Equals("1"))
+                idmedico.Items.Clear();
+                DataTable dtm = BussMedico.Listar();
+                idmedico.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dtm.Rows)
                 {
-                    idestado.Items.Add(new ListItem(texto, valor));
+                    string texto = r["nombres"].ToString() + " " + r["apellidos"].ToString();
+                    string valor = r["idmedico"].ToString();
+                    idmedico.Items.Add(new ListItem(texto, valor));
                 }
-            }
 
+                idestado.Items.Clear();
+                DataTable dte = BussEstado.Listar();
+                idestado.Items.Add(new ListItem("Seleccione..", ""));
+                foreach (DataRow r in dte.Rows)
+                {
+                    string texto = r["descripcion"].ToString();
+                    string valor = r["idestado"].ToString();
+                    if (valor.Equals("1"))
+                    {
+                        idestado.Items.Add(new ListItem(texto, valor));
+                    }
+            }
         }
 
         protected void btnGrabar_Click(object sender, EventArgs e)
